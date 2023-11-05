@@ -17,10 +17,11 @@ DTU: Technical University of Denmark, Department of Applied Mathematics and Comp
 
 ## Description of the algorithm
 
-We have used the provided code for the EIT image reconstruction with the following modifications:
-- The Otsu segmentation algorithm has been replaced by the Chan-Vese segmentation algorithm from scikit-image.
-- Additional generalized Tikhonov regularization has been added to penalize more when close to the missing electrodes (and boundary). The regularization matrix is a diagonal matrix. For example, for difficulty level 5, the diagonal elements mapped to image space look as in the image below:
-![](results/reg1.png)
+This algorithm makes use of the level set method. It parametrizes the conductivity $q=q(\phi_1,\phi_2,q_1,q_2,q_3,q_4)$ as a piecewise constant image by
+$$q = q_1(\phi_1>0, \phi_2>0) + q_2(\phi_1>0,\phi_2<0) + q_3(\phi_1<0,\phi_2>0) + q_4(\phi_1<0,\phi_2<0),$$
+where $\phi_1$ and $\phi_2$ are the level set functions. We then minimize the loss function
+$$F(\phi_1,\phi_2,q_1,q_2)=\frac{1}{2}\|U-U_{\mathrm{ref}}-(\mathcal{G}(q)-\mathcal{G}(0.8))\|_{C}^2 + \beta \int_{\Omega} |\nabla q| \, dx,$$ 
+by gradient descent.  
 
 ## Installation instructions
 To run our EIT image reconstruction algorithm, you will need:
