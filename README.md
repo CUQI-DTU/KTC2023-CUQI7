@@ -26,7 +26,7 @@ by gradient descent.  Here we mean the norm $\|x\|^2 = xCx$ defined by the preci
 To ensure numerical stability we reinitialize the level set functions $\phi_1$ and $\phi_2$ so that they resemble signed distance functions. We do this by finding the steady-state solution to
 $$\frac{\partial d}{\partial t} + \mathrm{sign}(d)(|\nabla d|-1)=0, \quad d(x,0)=\phi_i,$$
 for $i=1,2$. This is done by a Runge-Kutta 4 step for sufficiently many steps. 
-As a starting guess for the gradient descent method, we choose two signed distance functions $\phi_1$ and $\phi_2$ that gives rise to a segmented $q$ as reconstructed by the method in [this approach](https://github.com/CUQI-DTU/KTC2023-CUQI1). 
+As a starting guess for the gradient descent method, we choose two signed distance functions $\phi_1$ and $\phi_2$ that gives rise to a segmented $q$ as reconstructed by the method in [this approach](https://github.com/CUQI-DTU/KTC2023-CUQI1). If the level set method does not manage to improve the loss for the initial guess, this guess is converted to the final segmented solution.
 
 ## Installation instructions
 To run our EIT image reconstruction algorithm, you will need:
