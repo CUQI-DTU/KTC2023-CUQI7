@@ -32,7 +32,7 @@ As a starting guess for the gradient descent method, we choose two signed distan
 To run our EIT image reconstruction algorithm, you will need:
 
 - Python 3.x
-- Required Python libraries (listed in `requirements.txt`)
+- Required Python libraries (listed in `environment.yml`)
 - Access to the provided dataset (not included in this repository)
 
 ## Usage instructions
