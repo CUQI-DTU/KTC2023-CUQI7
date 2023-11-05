@@ -25,7 +25,7 @@ $$F(\phi_1,\phi_2,q_1,q_2)=\frac{1}{2}\|U-U_{\mathrm{ref}}-(\mathcal{G}(q)-\math
 by gradient descent.  Here we mean the norm $\|x\|^2 = xCx$ defined by the precision matrix $C$, which is also used in the provided reconstruction algorithm. We set $q_1 = 0.8$, $q_3=q_4=0.01$ and $q_2=5$ or $q_2=10$ depending on what gives the smaller loss.
 To ensure numerical stability we reinitialize the level set functions $\phi_1$ and $\phi_2$ so that they resemble signed distance functions. We do this by finding the steady-state solution to
 $$\frac{\partial d}{\partial t} + \mathrm{sign}(d)(|\nabla d|-1)=0, \quad d(x,0)=\phi_i,$$
-for $i=1,2$. This is done by a Runge-Kutta 4 step for sufficiently many steps. 
+for $i=1,2$. This is done by completing a Runge-Kutta-4 step $50$ times. 
 As a starting guess for the gradient descent method, we choose two signed distance functions $\phi_1$ and $\phi_2$ that gives rise to a segmented $q$ as reconstructed by the method in [this approach](https://github.com/CUQI-DTU/KTC2023-CUQI1). If the level set method does not manage to improve the loss for the initial guess, this guess is converted to the final segmented solution.
 
 ## Installation instructions
