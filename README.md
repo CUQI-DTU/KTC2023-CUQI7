@@ -44,12 +44,22 @@ python main.py path/to/input/files path/to/output/files difficulty
 ```
 
 ## Examples
-|  Phantom 	|  Ref	| Level 1 	|
-|----------	|-----	|---	|
-|**a**| ![](results/01.png)	| ![](results/11.png)	|   
-|**b**| ![](results/02.png)	| ![](results/12.png)	|  
-|**c**| ![](results/03.png)	| ![](results/13.png)	|  
-|**d**| ![](results/04.png)	| ![](results/14.png)	|
+|  Phantom 	|  Ref	| Level 1 	| Level 4 	| Level 7 	|
+|----------	|-----	|---	|---	|---	|
+|**a**| ![](results/01.png)	| ![](results/11.png)	|  ![](results/41.png) 	|   ![](results/71.png)	|   
+|**b**| ![](results/02.png)	| ![](results/12.png)	|  ![](results/42.png) 	|   ![](results/72.png)	|
+|**c**| ![](results/03.png)	| ![](results/13.png)	|  ![](results/43.png) 	|   ![](results/73.png)	|
+|**d**| ![](results/04.png)	| ![](results/14.png)	|  ![](results/44.png) 	|   ![](results/74.png)	|  
+
+Scores for each phantom and difficulty 1,4 and 7:
+|   Phantom	| Level 1 	| Level 4 	| Level 7 	|
+|-----	|---	|---	|---	|
+|**a**|0.881|0.866|0.798|
+|**b**|0.738|0.695|0.567|
+|**c**|0.931|0.798|0.790|
+|**d**|0.904|0.815|0.732|
+
+Scores have been computed using our own implementation of the scoring function based on scikit learn.
 
 
 ## License
